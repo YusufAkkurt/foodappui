@@ -1,10 +1,11 @@
 import pizza1 from 'assets/images/pizza1.png';
 import pizza2 from 'assets/images/pizza2.png';
 import pizza3 from 'assets/images/pizza3.png';
+import { ImageSourcePropType } from 'react-native';
 
 export interface Popular {
 	id: number;
-	image: string;
+	image: ImageSourcePropType;
 	title: string;
 	weight: number;
 	rating: number;

@@ -1,10 +1,11 @@
 import prizzaIcon from 'assets/images/pizza-icon.png';
 import shrimpIcon from 'assets/images/shrimp-icon.png';
 import sodaIcon from 'assets/images/soda-icon.png';
+import { ImageSourcePropType } from 'react-native';
 
 export interface Category {
 	id: number;
-	image: string;
+	image: ImageSourcePropType;
 	title: string;
 	selected: boolean;
 }
