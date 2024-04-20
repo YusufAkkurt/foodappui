@@ -8,7 +8,7 @@ import { StyledFeather, StyledImage, StyledMaterialCommunityIcons, StyledSafeAre
 export const HomeScreen = () => {
 	return (
 		<StyledScrollView className="flex-1 pt-5" showsVerticalScrollIndicator={false}>
-			<StyledView className="flex-row justify-between items-center p-5">
+			<StyledView className="flex-row justify-between items-center p-5 pt-8">
 				<StyledImage source={profileImg} className="w-10 h-10 rounded-full" />
 				<StyledFeather name="menu" size={26} className="text-text" />
 			</StyledView>
@@ -26,8 +26,8 @@ export const HomeScreen = () => {
 			<StyledView>
 				<StyledText className="text-base font-bold pt-5 pl-5">Categories</StyledText>
 
-				<StyledScrollView className="flex-row gap-5 pt-3 px-5" horizontal showsHorizontalScrollIndicator={false}>
-					{categoriesData.map((_category) => (
+				<StyledScrollView className="flex-row pt-3" horizontal showsHorizontalScrollIndicator={false}>
+					{categoriesData.map((_category, index) => (
 						<StyledView
 							key={_category.id}
 							style={{
@@ -40,7 +40,7 @@ export const HomeScreen = () => {
 								shadowRadius: 2.62,
 								elevation: 10
 							}}
-							className={`w-[105px] justify-evenly mb-5 items-center h-[177px] rounded-[20px] ${_category.selected ? 'bg-primary' : 'bg-white'}`}>
+							className={`w-[105px] mr-5 mt-1 justify-evenly mb-5 items-center h-[177px] rounded-[20px]${index === 0 ? ' ml-5' : ''} ${_category.selected ? 'bg-primary' : 'bg-white'}`}>
 							<StyledImage source={_category.image} className="w-[60px] h-[60px] object-contain" />
 
 							<StyledText className="font-semibold">{_category.title}</StyledText>
