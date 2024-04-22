@@ -1,12 +1,17 @@
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import { styled } from 'nativewind';
-import { SafeAreaView, View, Text, Image, TextInput, ScrollView } from 'react-native';
+import { SafeAreaView, View, Text, Image, TextInput, ScrollView, FlatList, TouchableWithoutFeedback } from 'react-native';
+import { Category } from './constants/categories.data';
+import { Popular } from './constants/populars.data';
 
-export const StyledSafeAreaView = styled(SafeAreaView);
-export const StyledView = styled(View);
-export const StyledText = styled(Text);
-export const StyledImage = styled(Image);
-export const StyledFeather = styled(Feather);
-export const StyledMaterialCommunityIcons = styled(MaterialCommunityIcons);
-export const StyledTextInput = styled(TextInput);
-export const StyledScrollView = styled(ScrollView);
+export const NSafeAreaView = styled(SafeAreaView);
+export const NView = styled(View);
+export const NText = styled(Text);
+export const NImage = styled(Image);
+export const NFeather = styled(Feather);
+export const NMaterialCommunityIcons = styled(MaterialCommunityIcons);
+export const NTextInput = styled(TextInput);
+export const NScrollView = styled(ScrollView);
+export const NFlatListCategory = styled(FlatList<Category>);
+export const NFlatListPopular = styled(FlatList<Popular>);
+export const NTouchableWithoutFeedback = styled(TouchableWithoutFeedback);
