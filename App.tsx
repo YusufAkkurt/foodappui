@@ -2,12 +2,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import { colors } from 'src/constants/colors';
+import { Popular } from 'src/constants/populars.data';
 import { DetailSceen } from 'src/screens/detail';
 import { HomeScreen } from 'src/screens/home';
 
 export type RootStackParamList = {
 	Home: undefined;
-	Detail: undefined;
+	Detail: { pizza: Popular };
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();

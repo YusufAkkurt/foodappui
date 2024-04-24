@@ -2,8 +2,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from 'App';
 import profileImg from 'assets/images/profile.png';
 import React from 'react';
-import { FlatList } from 'react-native';
-import { Category, categoriesData } from 'src/constants/categories.data';
+import { categoriesData } from 'src/constants/categories.data';
 import { colors } from 'src/constants/colors';
 import { popularsData } from 'src/constants/populars.data';
 import { NFeather, NFlatListCategory, NFlatListPopular, NImage, NMaterialCommunityIcons, NScrollView, NText, NTextInput, NTouchableWithoutFeedback, NView } from 'src/nativewinds.components';
@@ -37,7 +36,7 @@ export const HomeScreen = ({ navigation }: HomeScreenNavigationProp) => {
 					showsHorizontalScrollIndicator={false}
 					keyExtractor={(item) => item.id.toString()}
 					renderItem={({ item, index }) => (
-						<NTouchableWithoutFeedback onPress={() => navigation.navigate('Detail')}>
+						<NTouchableWithoutFeedback onPress={() => navigation.navigate('Detail', { pizza: popularsData[0] })}>
 							<NView
 								style={{
 									shadowColor: colors.text,
@@ -71,7 +70,7 @@ export const HomeScreen = ({ navigation }: HomeScreenNavigationProp) => {
 					scrollEnabled={false}
 					keyExtractor={(item) => item.id.toString()}
 					renderItem={({ item }) => (
-						<NTouchableWithoutFeedback onPress={() => navigation.navigate('Detail')}>
+						<NTouchableWithoutFeedback onPress={() => navigation.navigate('Detail', { pizza: item })}>
 							<NView key={item.id} style={{ display: 'flex' }} className="bg-white rounded-[25px] overflow-hidden mb-5">
 								<NView className="flex-row gap-2 items-center p-5">
 									<NMaterialCommunityIcons name="crown" size={16} className="text-primary" />
